@@ -1,0 +1,94 @@
+package Model;
+
+public class FilmComment
+{
+    public int getCommentID()
+    {
+        return commentID;
+    }
+
+    public void setCommentID(int commentID)
+    {
+        this.commentID = commentID;
+    }
+
+    public int getFilmID()
+    {
+        return filmID;
+    }
+
+    public void setFilmID(int filmID)
+    {
+        this.filmID = filmID;
+    }
+
+    public String getCommentTime()
+    {
+        return commentTime;
+    }
+
+    public void setCommentTime(String commentTime)
+    {
+        this.commentTime = commentTime;
+    }
+
+    public String getUserName()
+    {
+        return userName;
+    }
+
+    public void setUserName(String userName)
+    {
+        this.userName = userName;
+    }
+
+    public int getCommentLev()
+    {
+        return commentLev;
+    }
+
+    public void setCommentLev(int commentLev)
+    {
+        this.commentLev = commentLev;
+    }
+
+    public String getCommentContent()
+    {
+        return commentContent;
+    }
+
+    public void setCommentContent(String commentContent)
+    {
+        this.commentContent = commentContent;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "FilmComment{" +
+                "commentID=" + commentID +
+                ", filmID=" + filmID +
+                ", commentTime='" + commentTime + '\'' +
+                ", userName='" + userName + '\'' +
+                ", commentLev=" + commentLev +
+                ", commentContent='" + commentContent + '\'' +
+                '}';
+    }
+
+    public FilmComment(int commentID, int filmID, String commentTime, String userName, int commentLev, String commentContent)
+    {
+        this.commentID = commentID;
+        this.filmID = filmID;
+        this.commentTime = commentTime;
+        this.userName = userName;
+        this.commentLev = commentLev;
+        this.commentContent = commentContent;
+    }
+
+    private int commentID;
+    private int filmID;
+    private String commentTime;
+    private String userName;
+    private int commentLev;
+    private String commentContent;
+}
