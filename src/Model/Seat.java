@@ -1,6 +1,6 @@
 package Model;
 
-public class Seats
+public class Seat
 {
     private int seatID;
     private int rowID;
@@ -70,7 +70,7 @@ public class Seats
                 '}';
     }
 
-    public Seats(int seatID, int rowID, int columnID, int sellStatus, int listingID)
+    public Seat(int seatID, int rowID, int columnID, int sellStatus, int listingID)
     {
         this.seatID = seatID;
         this.rowID = rowID;

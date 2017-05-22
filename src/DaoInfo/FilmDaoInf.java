@@ -7,7 +7,7 @@ import Model.FilmListing;
 import java.util.List;
 
 
-public interface FilmDaoInfo
+public interface FilmDaoInf
 {
 
     List<Film> getAllFilms();

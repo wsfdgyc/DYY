@@ -1,7 +1,7 @@
 package Dao;
 
 import Control.GetDate;
-import DaoInfo.FilmDaoInfo;
+import DaoInfo.FilmDaoInf;
 import Model.Film;
 import Model.FilmComment;
 import Model.FilmListing;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public  class FilmDao implements FilmDaoInfo
+public  class FilmDao implements FilmDaoInf
 {
     @Override
     public List<Film> getAllFilms()

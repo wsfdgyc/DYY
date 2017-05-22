@@ -12,10 +12,9 @@ public class Menu {
 		System.out.println("尊敬的会员--"+username+"请选择您要使用的功能：");
 		System.out.println("1.查看余额");
 		System.out.println("2.充值金额");
-		System.out.println("3.浏览影片列表");
-		System.out.println("4.购买影票");
-		System.out.println("5.影评区");
-		System.out.println("6.更多精彩，敬请期待！");
+		System.out.println("3.浏览影片列表并购买影票");
+		System.out.println("4.影评区");
+		System.out.println("5.更多精彩，敬请期待！");
 		UserDao ud=new UserDao();
 		int j=tools.getInt("请输入编号：");
 		switch(j)

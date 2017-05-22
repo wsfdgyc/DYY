@@ -1,6 +1,6 @@
 package Model;
 
-public class Tickets
+public class Ticket
 {
     public int getTicketID()
     {
@@ -42,7 +42,7 @@ public class Tickets
         this.userName = userName;
     }
 
-    public Tickets(int ticketID, int listingID, int seatID, String userName)
+    public Ticket(int ticketID, int listingID, int seatID, String userName)
     {
         this.ticketID = ticketID;
         this.listingID = listingID;
