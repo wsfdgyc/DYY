@@ -5,7 +5,7 @@ import View.Login;
 public class Test {
 
 	public static void main(String[] args) {
-  //  	Login.start();
+ 	Login.start();
 //		FilmDao fd=new FilmDao();
 //		for (Film tmp : fd.getAllFilms()) {
 //            System.out.println(tmp);
@@ -15,16 +15,6 @@ public class Test {
 //		SimpleDateFormat df=new SimpleDateFormat("yyyyMMdd");
 //		String a=df.format(new Date());
 //		System.out.println(a);
-		int rows=3;
-		int columns=3;
-		int SellStatus=0;
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < columns; j++) {
-				System.out.print("1");
-			}
-			System.out.println();
-
-		}
 
 	}
 

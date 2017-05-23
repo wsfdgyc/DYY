@@ -2,6 +2,42 @@ package Model;
 
 public class Ticket
 {
+
+    @Override
+    public String toString()
+    {
+        return "Ticket{" +
+                "ticketID=" + ticketID +
+                ", filmName='" + filmName + '\'' +
+                ", hallID=" + hallID +
+                ", date='" + date + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", rows=" + rows +
+                ", columns=" + columns +
+                ", rowID=" + rowID +
+                ", columnID=" + columnID +
+                ", price=" + price +
+                ", sellStatus=" + sellStatus +
+                '}';
+    }
+
+    public Ticket(int ticketID, String filmName, int hallID, String date, String startTime, String endTime, int rows, int columns, int rowID, int columnID, double price, int sellStatus)
+    {
+        this.ticketID = ticketID;
+        this.filmName = filmName;
+        this.hallID = hallID;
+        this.date = date;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.rows = rows;
+        this.columns = columns;
+        this.rowID = rowID;
+        this.columnID = columnID;
+        this.price = price;
+        this.sellStatus = sellStatus;
+    }
+
     public int getTicketID()
     {
         return ticketID;
@@ -12,57 +48,126 @@ public class Ticket
         this.ticketID = ticketID;
     }
 
-    public int getListingID()
+    public String getFilmName()
     {
-        return listingID;
+        return filmName;
     }
 
-    public void setListingID(int listingID)
+    public void setFilmName(String filmName)
     {
-        this.listingID = listingID;
+        this.filmName = filmName;
     }
 
-    public int getSeatID()
+    public int getHallID()
     {
-        return seatID;
+        return hallID;
     }
 
-    public void setSeatID(int seatID)
+    public void setHallID(int hallID)
     {
-        this.seatID = seatID;
+        this.hallID = hallID;
     }
 
-    public String getUserName()
+    public String getDate()
     {
-        return userName;
+        return date;
     }
 
-    public void setUserName(String userName)
+    public void setDate(String date)
     {
-        this.userName = userName;
+        this.date = date;
     }
 
-    public Ticket(int ticketID, int listingID, int seatID, String userName)
+    public String getStartTime()
     {
-        this.ticketID = ticketID;
-        this.listingID = listingID;
-        this.seatID = seatID;
-        this.userName = userName;
+        return startTime;
     }
 
-    @Override
-    public String toString()
+    public void setStartTime(String startTime)
     {
-        return "Tickets{" +
-                "ticketID=" + ticketID +
-                ", listingID=" + listingID +
-                ", seatID=" + seatID +
-                ", userName='" + userName + '\'' +
-                '}';
+        this.startTime = startTime;
+    }
+
+    public String getEndTime()
+    {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime)
+    {
+        this.endTime = endTime;
+    }
+
+    public int getRows()
+    {
+        return rows;
+    }
+
+    public void setRows(int rows)
+    {
+        this.rows = rows;
+    }
+
+    public int getColumns()
+    {
+        return columns;
+    }
+
+    public void setColumns(int columns)
+    {
+        this.columns = columns;
+    }
+
+    public int getRowID()
+    {
+        return rowID;
+    }
+
+    public void setRowID(int rowID)
+    {
+        this.rowID = rowID;
+    }
+
+    public int getColumnID()
+    {
+        return columnID;
+    }
+
+    public void setColumnID(int columnID)
+    {
+        this.columnID = columnID;
+    }
+
+    public double getPrice()
+    {
+        return price;
+    }
+
+    public void setPrice(double price)
+    {
+        this.price = price;
+    }
+
+    public int getSellStatus()
+    {
+        return sellStatus;
+    }
+
+    public void setSellStatus(int sellStatus)
+    {
+        this.sellStatus = sellStatus;
     }
 
     private int ticketID;
-    private int listingID;
-    private  int seatID;
-    private  String userName;
+    private String filmName;
+    private int hallID;
+    private String date;
+    private String startTime;
+    private String endTime;
+    private int rows;
+    private int columns;
+    private int rowID;
+    private int columnID;
+    private double price;
+    private int sellStatus;
 }

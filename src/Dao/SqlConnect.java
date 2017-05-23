@@ -21,14 +21,14 @@ public class SqlConnect {
 	          System.out.println("加载数据库引擎失败");
 	          System.exit(0);
 	      }     
-	      System.out.println("数据库驱动成功");
+	   //   System.out.println("数据库驱动成功");
 	      
 	      try {
 	          String user="sa";                                    
 	          String password="wsfdgyc520";
 	          con=DriverManager.getConnection(connectDB,user,password);
 
-	          System.out.println("连接数据库成功");
+	   //       System.out.println("连接数据库成功");
 	      }catch(SQLException e){
 	       e.printStackTrace();
 	       System.out.print(e.getErrorCode());

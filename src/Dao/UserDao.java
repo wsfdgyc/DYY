@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Control.UserControl;
-import DaoInfo.UserDaoInfo;
+import DaoInfo.UserDaoInf;
+import DaoInfo.UserDaoInf;
 import Model.Bal;
 import Model.User;
 
-public class UserDao implements UserDaoInfo{
+public class UserDao implements UserDaoInf
+{
 	
 	@Override
 	public int regist(String UserName, String Pwd) {
