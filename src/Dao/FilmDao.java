@@ -1,10 +1,13 @@
 package Dao;
 
+import Control.FilmControl;
 import Control.GetDate;
+import Control.UserControl;
 import DaoInfo.FilmDaoInf;
 import Model.Film;
 import Model.FilmComment;
 import Model.FilmListing;
+import Tools.tools;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,9 +58,39 @@ public  class FilmDao implements FilmDaoInf
     }
 
     @Override
-    public List<FilmComment> getAllFilmComment()
+    public  List<FilmComment> getAllFilmComment(int filmID)
     {
-        return null;
+        String sqlstr = "select * from filmComment";
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        List<FilmComment> filmComments = new ArrayList<>();
+        try
+        {
+            ps = SqlConnect.Connect().prepareStatement(sqlstr);
+            rs=ps.executeQuery();
+            while (rs.next())
+            {
+                int commentID = rs.getInt("commentID");
+//                int filmID = rs.getInt("filmID");
+                String filmName = rs.getString("filmName");
+                String commentTime = rs.getString("commentTime");
+                String userName = rs.getString("userName");
+                int commentLev = rs.getInt("commentLev");
+                String commentContent = rs.getString("commentContent");
+                FilmComment filmComment = new FilmComment(commentID, filmID, filmName, commentTime, userName, commentLev, commentContent);
+                filmComments.add(filmComment);
+
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            SqlClose.Close(ps,rs);
+        }
+        return filmComments;
     }
 
     @Override
@@ -103,6 +136,11 @@ public  class FilmDao implements FilmDaoInf
     @Override
     public void viewFilmList()
     {
+ //       UserDao userDao = new UserDao();
+        FilmControl filmControl = new FilmControl();
+        filmControl.printFlimList("近期的电影列表如下:");
+        int filmID = tools.getInt("查看电影详细信息（输入FilmID）:");
 
     }
+
 }

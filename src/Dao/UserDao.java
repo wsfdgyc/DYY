@@ -55,9 +55,9 @@ public class UserDao implements UserDaoInf
 	}
 
 	@Override
-	public boolean SaveMoney(String UserName,Double Money) {
+	public boolean SaveMoney(String userName,Double Money) {
 		// TODO Auto-generated method stub	
-		String sqlstr="update UserBal set Bal=Bal+"+Money+"where UserName="+UserName;
+		String sqlstr="update UserBal set Bal=Bal+"+Money+" where UserName= '"+userName+"'";
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		UserDao ud=new UserDao();
@@ -76,7 +76,7 @@ public class UserDao implements UserDaoInf
 		}
 		if(num==1)
 		{
-			System.out.println("充值成功，您当前账户的余额为："+ud.WatchBal(UserName));
+			System.out.println("充值成功，您当前账户的余额为："+ud.WatchBal(userName));
 			return true;
 		}
 		else
@@ -88,9 +88,43 @@ public class UserDao implements UserDaoInf
 	}
 
 	@Override
-	public double WatchBal(String UserName) {
+	public boolean takeMoney(String userName, Double Money)
+	{
 		// TODO Auto-generated method stub
-		String sqlstr="select Bal from UserBal where UserName="+UserName;
+		String sqlstr="update UserBal set Bal=Bal+"+Money+" where UserName= '"+userName+"'";
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		UserDao ud=new UserDao();
+		int num=0;
+		try{
+			ps=SqlConnect.Connect().prepareStatement(sqlstr);
+			num=ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		finally {
+			SqlClose.Close(ps, rs);
+
+		}
+		if(num==1)
+		{
+			System.out.println("购票成功，您当前账户的余额为："+ud.WatchBal(userName));
+			return true;
+		}
+		else
+		{
+			System.out.println("购票失败");
+			return false;
+		}
+
+	}
+
+	@Override
+	public double WatchBal(String userName) {
+		// TODO Auto-generated method stub
+		String sqlstr="select * from UserBal where UserName= '"+userName+"'";
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		List<Bal> bals=new ArrayList<>();
@@ -100,7 +134,7 @@ public class UserDao implements UserDaoInf
 			rs=ps.executeQuery();
 			while(rs.next())
 			{
-				String username=rs.getString("UserName");
+				String username=rs.getString("userName");
 				int ubal=rs.getInt("Bal");
 				Bal bal=new Bal(username,ubal);
 				bals.add(bal);
