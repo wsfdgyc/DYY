@@ -1,6 +1,7 @@
 package View;
 
 import Control.FilmControl;
+import Dao.FilmDao;
 import Dao.UserDao;
 import Tools.tools;
 
@@ -9,6 +10,7 @@ public class Menu {
 	public  void userMenu(String userName)
 	{
 		FilmControl filmControl=new FilmControl();
+		FilmDao filmDao = new FilmDao();
 		System.out.println("尊敬的会员--"+ userName +"请选择您要使用的功能：");
 		System.out.println("1.查看余额");
 		System.out.println("2.充值金额");
@@ -27,10 +29,13 @@ public class Menu {
 				ud.SaveMoney(userName, tools.getDouble("请输入您要充值的金额："));
 				break;
 			case 3:
-
+				filmDao.viewFilmList(userName);
 				break;
 			case 4:
 				filmControl.buyFilmTicket(userName);
+				break;
+			case 5:
+
 				break;
 			default:
 				break;

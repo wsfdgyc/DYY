@@ -11,6 +11,7 @@ import DaoInfo.UserDaoInf;
 import DaoInfo.UserDaoInf;
 import Model.Bal;
 import Model.User;
+import Tools.tools;
 
 public class UserDao implements UserDaoInf
 {
@@ -77,11 +78,13 @@ public class UserDao implements UserDaoInf
 		if(num==1)
 		{
 			System.out.println("充值成功，您当前账户的余额为："+ud.WatchBal(userName));
+			tools.returnMenu(userName);
 			return true;
 		}
 		else
 		{
 			System.out.println("充值失败！");
+			tools.returnMenu(userName);
 			return false;
 		}
 
@@ -140,6 +143,7 @@ public class UserDao implements UserDaoInf
 				bals.add(bal);
 			}
 			userbal=bals.get(0).getBal();
+			tools.returnMenu(userName);
 		}
 		catch(SQLException e)
 		{

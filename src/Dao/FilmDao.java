@@ -134,13 +134,25 @@ public  class FilmDao implements FilmDaoInf
 
 
     @Override
-    public void viewFilmList()
+    public void viewFilmList(String  userName)
     {
  //       UserDao userDao = new UserDao();
         FilmControl filmControl = new FilmControl();
         filmControl.printFlimList("近期的电影列表如下:");
         int filmID = tools.getInt("查看电影详细信息（输入FilmID）:");
+        filmControl.viewFilmComment(filmID);
+        tools.returnMenu(userName);
 
+    }
+
+    @Override
+    public void viewFilmComment(String userName)
+    {
+        FilmControl filmControl = new FilmControl();
+        filmControl.printFlimList("近期的电影列表如下:");
+        int filmID = tools.getInt("输入FilmID进入对应影评区:");
+        filmControl.viewFilmComment(filmID);
+        //做个评论区
     }
 
 }

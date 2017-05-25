@@ -139,8 +139,7 @@ public class FilmControl
             SqlClose.Close(psRowColumnID,rsRowColumnID);
         }
 
-        MenuControl menuControl = new MenuControl();
-        menuControl.returnMenu(userName);
+        tools.returnMenu(userName);
 
 
     }
