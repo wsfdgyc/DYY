@@ -1,4 +1,4 @@
-package DaoInfo;
+package DaoInf;
 
 import java.util.List;
 

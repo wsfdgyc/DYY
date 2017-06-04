@@ -30,7 +30,7 @@
     </database>
     <schema id="10" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2017-05-20.14:24:59.880</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-06-04.14:44:10.367</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -71,217 +71,235 @@
       <ObjectId>16393</ObjectId>
     </schema>
     <table id="23" parent="10" name="Cinema">
-      <ObjectId>1269579561</ObjectId>
+      <ObjectId>1861581670</ObjectId>
       <Comment>影院信息表</Comment>
-      <CreatedTimestamp>2017-05-20.13:48:50.650</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.13:48:50.650</ModifiedTimestamp>
+      <CreatedTimestamp>2017-05-22.20:36:10.303</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-22.21:16:38.650</ModifiedTimestamp>
     </table>
     <table id="24" parent="10" name="Film">
       <ObjectId>1205579333</ObjectId>
       <Comment>电影类</Comment>
       <CreatedTimestamp>2017-05-20.13:25:54.633</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.13:49:56.047</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-05-21.01:32:26.743</ModifiedTimestamp>
     </table>
     <table id="25" parent="10" name="FilmComment">
-      <ObjectId>1237579447</ObjectId>
+      <ObjectId>338100245</ObjectId>
       <Comment>电影评论表</Comment>
-      <CreatedTimestamp>2017-05-20.13:31:57.913</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.14:24:59.813</ModifiedTimestamp>
+      <CreatedTimestamp>2017-05-24.21:26:53.980</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-24.21:26:54.160</ModifiedTimestamp>
     </table>
     <table id="26" parent="10" name="FilmListing">
       <ObjectId>1333579789</ObjectId>
       <Comment>场次表</Comment>
       <CreatedTimestamp>2017-05-20.14:10:49.330</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.14:10:49.330</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-05-22.23:58:37.200</ModifiedTimestamp>
     </table>
-    <table id="27" parent="10" name="Seats">
-      <ObjectId>1301579675</ObjectId>
+    <table id="27" parent="10" name="Tickets">
+      <ObjectId>82099333</ObjectId>
       <Comment>座位信息表</Comment>
-      <CreatedTimestamp>2017-05-20.14:05:37.217</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.14:21:58.833</ModifiedTimestamp>
+      <CreatedTimestamp>2017-05-23.22:51:44.630</CreatedTimestamp>
+      <ModifiedTimestamp>2017-06-04.14:44:09.793</ModifiedTimestamp>
     </table>
-    <table id="28" parent="10" name="Tickets">
-      <ObjectId>1365579903</ObjectId>
-      <Comment>影票信息表</Comment>
-      <CreatedTimestamp>2017-05-20.14:16:41.247</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.14:23:46.170</ModifiedTimestamp>
-    </table>
-    <table id="29" parent="10" name="UserBal">
+    <table id="28" parent="10" name="UserBal">
       <ObjectId>597577167</ObjectId>
       <CreatedTimestamp>2017-05-14.17:14:30.847</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-17.19:54:34.807</ModifiedTimestamp>
     </table>
-    <table id="30" parent="10" name="UserInfo">
+    <table id="29" parent="10" name="UserInfo">
       <ObjectId>885578193</ObjectId>
       <CreatedTimestamp>2017-05-17.19:54:54.750</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-17.19:54:54.767</ModifiedTimestamp>
     </table>
-    <column id="31" parent="23" name="VideoHallID">
+    <table id="30" parent="10" name="value">
+      <ObjectId>1941581955</ObjectId>
+      <CreatedTimestamp>2017-05-22.20:46:36.963</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-22.20:46:37.097</ModifiedTimestamp>
+    </table>
+    <view id="31" parent="10" name="UserInfoAll">
+      <ObjectId>1397580017</ObjectId>
+      <CreatedTimestamp>2017-05-20.20:11:11.137</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-20.20:11:11.137</ModifiedTimestamp>
+    </view>
+    <view id="32" parent="10" name="ViewFilmListing">
+      <ObjectId>1525580473</ObjectId>
+      <CreatedTimestamp>2017-05-21.15:32:16.017</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-21.15:32:16.017</ModifiedTimestamp>
+    </view>
+    <routine id="33" parent="10" name="更新影票状态">
+      <ObjectId>2085582468</ObjectId>
+      <CreatedTimestamp>2017-05-23.00:16:54.300</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-23.23:46:21.817</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <column id="34" parent="23" name="VideoHallID">
       <Position>1</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="23" name="rows">
+    <column id="35" parent="23" name="rows">
       <Position>2</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="33" parent="23" name="columns">
+    <column id="36" parent="23" name="columns">
       <Position>3</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="34" parent="23" name="OpenTime">
+    <column id="37" parent="23" name="rowid">
       <Position>4</Position>
-      <DataType>time|0</DataType>
+      <DataType>int|0</DataType>
     </column>
-    <column id="35" parent="23" name="CloseTime">
+    <column id="38" parent="23" name="columnid">
       <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="39" parent="23" name="OpenTime">
+      <Position>6</Position>
       <DataType>time|0</DataType>
     </column>
-    <index id="36" parent="23" name="PK__Cinema__A1CC42D927DD38D7">
-      <Position>1</Position>
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>VideoHallID</ColNames>
-      <Clustering>1</Clustering>
-      <Unique>1</Unique>
-    </index>
-    <key id="37" parent="23" name="PK__Cinema__A1CC42D927DD38D7">
-      <ObjectId>1285579618</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2017-05-20.13:48:50.693</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.13:48:50.693</ModifiedTimestamp>
-      <ColNames>VideoHallID</ColNames>
-      <UnderlyingIndexName>PK__Cinema__A1CC42D927DD38D7</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="38" parent="24" name="FileID">
+    <column id="40" parent="23" name="CloseTime">
+      <Position>7</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="41" parent="24" name="FilmID">
       <Position>1</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="39" parent="24" name="FileName">
+    <column id="42" parent="24" name="FilmName">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="40" parent="24" name="ReleaseDate">
+    <column id="43" parent="24" name="ReleaseDate">
       <Position>3</Position>
       <DataType>char(8)|0</DataType>
     </column>
-    <column id="41" parent="24" name="CloseDate">
+    <column id="44" parent="24" name="CloseDate">
       <Position>4</Position>
       <DataType>char(8)|0</DataType>
     </column>
-    <column id="42" parent="24" name="Star">
+    <column id="45" parent="24" name="Star">
       <Position>5</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="43" parent="24" name="Director">
+    <column id="46" parent="24" name="Director">
       <Position>6</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="44" parent="24" name="Content">
+    <column id="47" parent="24" name="Content">
       <Position>7</Position>
       <DataType>varchar(1000)|0</DataType>
     </column>
-    <column id="45" parent="24" name="Length">
+    <column id="48" parent="24" name="Length">
       <Position>8</Position>
       <DataType>float|0</DataType>
     </column>
-    <index id="46" parent="24" name="PK__Film__6F0F989F6EA16111">
+    <index id="49" parent="24" name="PK__Film__6F0F989F6EA16111">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>FileID</ColNames>
+      <ColNames>FilmID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="47" parent="24" name="PK__Film__6F0F989F6EA16111">
+    <key id="50" parent="24" name="PK__Film__6F0F989F6EA16111">
       <ObjectId>1221579390</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-05-20.13:25:54.693</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-20.13:25:54.693</ModifiedTimestamp>
-      <ColNames>FileID</ColNames>
+      <ColNames>FilmID</ColNames>
       <UnderlyingIndexName>PK__Film__6F0F989F6EA16111</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="25" name="CommentID">
+    <column id="51" parent="25" name="CommentID">
       <Position>1</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="25" name="FilmID">
+    <column id="52" parent="25" name="FilmID">
       <Position>2</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="50" parent="25" name="CommnetTime">
+    <column id="53" parent="25" name="FilmName">
       <Position>3</Position>
-      <DataType>smalldatetime|0</DataType>
-    </column>
-    <column id="51" parent="25" name="UsaerName">
-      <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="52" parent="25" name="CommentLev">
+    <column id="54" parent="25" name="CommentTime">
+      <Position>4</Position>
+      <DataType>smalldatetime|0</DataType>
+    </column>
+    <column id="55" parent="25" name="UserName">
       <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="56" parent="25" name="CommentLev">
+      <Position>6</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="53" parent="25" name="CommentContent">
-      <Position>6</Position>
+    <column id="57" parent="25" name="CommentContent">
+      <Position>7</Position>
       <DataType>varchar(1000)|0</DataType>
     </column>
-    <index id="54" parent="25" name="PK__FilmComm__C3B4DFAA399A4F80">
+    <index id="58" parent="25" name="PK__FilmComm__C3B4DFAA399A4F80">
       <Position>1</Position>
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>CommentID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="55" parent="25" name="PK__FilmComm__C3B4DFAA399A4F80">
-      <ObjectId>1253579504</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2017-05-20.13:31:57.943</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.13:31:57.943</ModifiedTimestamp>
+    <key id="59" parent="25" name="PK__FilmComm__C3B4DFAA399A4F80">
+      <ObjectId>354100302</ObjectId>
+      <CreatedTimestamp>2017-05-24.21:26:54.157</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-24.21:26:54.157</ModifiedTimestamp>
       <ColNames>CommentID</ColNames>
       <UnderlyingIndexName>PK__FilmComm__C3B4DFAA399A4F80</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="56" parent="26" name="ListingID">
+    <column id="60" parent="26" name="ListingID">
       <Position>1</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="57" parent="26" name="HallID">
+    <column id="61" parent="26" name="HallID">
       <Position>2</Position>
       <Comment>放映厅编号</Comment>
       <DataType>int|0</DataType>
     </column>
-    <column id="58" parent="26" name="Date">
+    <column id="62" parent="26" name="Date">
       <Position>3</Position>
       <DataType>char(8)|0</DataType>
     </column>
-    <column id="59" parent="26" name="Number">
+    <column id="63" parent="26" name="Number">
       <Position>4</Position>
       <Comment>场次顺序号</Comment>
       <DataType>int|0</DataType>
     </column>
-    <column id="60" parent="26" name="FilmID">
+    <column id="64" parent="26" name="FilmID">
       <Position>5</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="61" parent="26" name="StratTime">
+    <column id="65" parent="26" name="StratTime">
       <Position>6</Position>
       <DataType>time|0</DataType>
     </column>
-    <column id="62" parent="26" name="EndTime">
+    <column id="66" parent="26" name="EndTime">
       <Position>7</Position>
       <DataType>time|0</DataType>
     </column>
-    <index id="63" parent="26" name="PK__FilmList__BF3EBEF0F9F51785">
+    <column id="67" parent="26" name="Price">
+      <Position>8</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="68" parent="26" name="FinishStatus">
+      <Position>9</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="69" parent="26" name="PK__FilmList__BF3EBEF0F9F51785">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ListingID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="64" parent="26" name="PK__FilmList__BF3EBEF0F9F51785">
+    <key id="70" parent="26" name="PK__FilmList__BF3EBEF0F9F51785">
       <ObjectId>1349579846</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-05-20.14:10:49.380</CreatedTimestamp>
@@ -290,109 +308,115 @@
       <UnderlyingIndexName>PK__FilmList__BF3EBEF0F9F51785</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="65" parent="27" name="SeatID">
+    <column id="71" parent="27" name="TicketID">
       <Position>1</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="66" parent="27" name="RowID">
+    <column id="72" parent="27" name="ListingID">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="73" parent="27" name="FilmID">
       <Position>3</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="67" parent="27" name="ColumnID">
+    <column id="74" parent="27" name="FilmName">
       <Position>4</Position>
-      <DataType>int|0</DataType>
+      <DataType>nchar(10)|0</DataType>
     </column>
-    <column id="68" parent="27" name="SellStatus">
+    <column id="75" parent="27" name="HallID">
       <Position>5</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="69" parent="27" name="ListingID">
+    <column id="76" parent="27" name="Date">
+      <Position>6</Position>
+      <DataType>char(8)|0</DataType>
+    </column>
+    <column id="77" parent="27" name="StartTime">
+      <Position>7</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="78" parent="27" name="EndTime">
       <Position>8</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="79" parent="27" name="Rows">
+      <Position>9</Position>
       <DataType>int|0</DataType>
     </column>
-    <index id="70" parent="27" name="PK__Seats__311713D3DAA90577">
+    <column id="80" parent="27" name="Columns">
+      <Position>10</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="81" parent="27" name="RowID">
+      <Position>11</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="82" parent="27" name="ColumnID">
+      <Position>12</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="83" parent="27" name="Price">
+      <Position>13</Position>
+      <DataType>decimal(38,6)|0</DataType>
+    </column>
+    <column id="84" parent="27" name="SellStatus">
+      <Position>14</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="85" parent="27" name="UserName">
+      <Position>15</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="86" parent="27" name="PK__Seats__311713D3DAA90577">
       <Position>1</Position>
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>SeatID</ColNames>
+      <ColNames>TicketID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="71" parent="27" name="PK__Seats__311713D3DAA90577">
-      <ObjectId>1317579732</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2017-05-20.14:05:37.260</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.14:05:37.260</ModifiedTimestamp>
-      <ColNames>SeatID</ColNames>
+    <key id="87" parent="27" name="PK__Seats__311713D3DAA90577">
+      <ObjectId>98099390</ObjectId>
+      <CreatedTimestamp>2017-05-23.22:51:44.743</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-23.22:51:44.743</ModifiedTimestamp>
+      <ColNames>TicketID</ColNames>
       <UnderlyingIndexName>PK__Seats__311713D3DAA90577</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="72" parent="28" name="TicketID">
-      <Position>1</Position>
-      <DataType>int|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="73" parent="28" name="ListingID">
-      <Position>2</Position>
-      <DataType>int|0</DataType>
-    </column>
-    <column id="74" parent="28" name="SeatID">
-      <Position>3</Position>
-      <DataType>int|0</DataType>
-    </column>
-    <column id="75" parent="28" name="UserName">
-      <Position>4</Position>
-      <DataType>varchar(50)|0</DataType>
-    </column>
-    <index id="76" parent="28" name="PK__Tickets__712CC62760316B75">
-      <Position>1</Position>
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>TicketID</ColNames>
-      <Clustering>1</Clustering>
-      <Unique>1</Unique>
-    </index>
-    <key id="77" parent="28" name="PK__Tickets__712CC62760316B75">
-      <ObjectId>1381579960</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2017-05-20.14:16:41.273</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-20.14:16:41.273</ModifiedTimestamp>
-      <ColNames>TicketID</ColNames>
-      <UnderlyingIndexName>PK__Tickets__712CC62760316B75</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="78" parent="29" name="UserName">
+    <column id="88" parent="28" name="UserName">
       <Position>1</Position>
       <DataType>nvarchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="29" name="Bal">
+    <column id="89" parent="28" name="Bal">
       <Position>3</Position>
       <DataType>decimal(38,6)|0</DataType>
     </column>
-    <column id="80" parent="30" name="UserName">
+    <column id="90" parent="29" name="UserName">
       <Position>1</Position>
       <DataType>nvarchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="81" parent="30" name="Pwd">
+    <column id="91" parent="29" name="Pwd">
       <Position>2</Position>
       <DataType>nvarchar(50)|0</DataType>
     </column>
-    <column id="82" parent="30" name="Status">
+    <column id="92" parent="29" name="Status">
       <Position>3</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="83" parent="30" name="Power">
+    <column id="93" parent="29" name="Power">
       <Position>4</Position>
       <DataType>int|0</DataType>
     </column>
-    <index id="84" parent="30" name="PK_UserInfo">
+    <index id="94" parent="29" name="PK_UserInfo">
       <Position>1</Position>
       <ColNames>UserName</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="85" parent="30" name="PK_UserInfo">
+    <key id="95" parent="29" name="PK_UserInfo">
       <ObjectId>901578250</ObjectId>
       <CreatedTimestamp>2017-05-17.19:54:54.760</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-17.19:54:54.760</ModifiedTimestamp>
@@ -400,5 +424,75 @@
       <UnderlyingIndexName>PK_UserInfo</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
+    <column id="96" parent="30" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="97" parent="30" name="rowid">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="98" parent="30" name="columnid">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="99" parent="31" name="UserName">
+      <Position>1</Position>
+      <DataType>nvarchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="31" name="Pwd">
+      <Position>2</Position>
+      <DataType>nvarchar(50)|0</DataType>
+    </column>
+    <column id="101" parent="31" name="Status">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="102" parent="31" name="Power">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="103" parent="31" name="Bal">
+      <Position>5</Position>
+      <DataType>decimal(38,6)|0</DataType>
+    </column>
+    <column id="104" parent="32" name="FilmName">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="105" parent="32" name="ListingID">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="32" name="HallID">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="107" parent="32" name="Date">
+      <Position>4</Position>
+      <DataType>char(8)|0</DataType>
+    </column>
+    <column id="108" parent="32" name="Number">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="109" parent="32" name="FilmID">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="110" parent="32" name="StratTime">
+      <Position>7</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="111" parent="32" name="EndTime">
+      <Position>8</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="112" parent="32" name="Price">
+      <Position>9</Position>
+      <DataType>float|0</DataType>
+    </column>
   </database-model>
 </dataSource>

@@ -2,11 +2,12 @@ package Dao;
 
 import Control.FilmControl;
 import Control.GetDate;
-import Control.UserControl;
-import DaoInfo.FilmDaoInf;
+import DaoInf.FilmDaoInf;
 import Model.Film;
 import Model.FilmComment;
 import Model.FilmListing;
+import Model.Ticket;
+import Tools.PrintList;
 import Tools.tools;
 
 import java.sql.PreparedStatement;
@@ -60,7 +61,7 @@ public  class FilmDao implements FilmDaoInf
     @Override
     public  List<FilmComment> getAllFilmComment(int filmID)
     {
-        String sqlstr = "select * from filmComment";
+        String sqlstr = "select * from filmComment where FilmID = "+filmID;
         PreparedStatement ps=null;
         ResultSet rs=null;
         List<FilmComment> filmComments = new ArrayList<>();
@@ -71,13 +72,13 @@ public  class FilmDao implements FilmDaoInf
             while (rs.next())
             {
                 int commentID = rs.getInt("commentID");
-//                int filmID = rs.getInt("filmID");
+                int filmIDOut = rs.getInt("filmID");
                 String filmName = rs.getString("filmName");
                 String commentTime = rs.getString("commentTime");
                 String userName = rs.getString("userName");
                 int commentLev = rs.getInt("commentLev");
                 String commentContent = rs.getString("commentContent");
-                FilmComment filmComment = new FilmComment(commentID, filmID, filmName, commentTime, userName, commentLev, commentContent);
+                FilmComment filmComment = new FilmComment(commentID, filmIDOut, filmName, commentTime, userName, commentLev, commentContent);
                 filmComments.add(filmComment);
 
             }
@@ -132,6 +133,48 @@ public  class FilmDao implements FilmDaoInf
         return filmListings;
     }
 
+    @Override
+    public List<Ticket> getAllTicket()
+    {
+        String sqlstr = "select * from tickets";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<Ticket> tickets = new ArrayList<>();
+        try
+        {
+            ps = SqlConnect.Connect().prepareStatement(sqlstr);
+            rs = ps.executeQuery();
+            while (rs.next())
+            {
+                 int ticketID=rs.getInt("TicketID");
+                 int listingID = rs.getInt("ListingID");
+                int filmID = rs.getInt("FilmID");
+                 String filmName=rs.getString("FilmName");
+                 int hallID=rs.getInt("HallID");
+                 String date=rs.getString("Date");
+                 String startTime=rs.getString("StartTime");
+                 String endTime=rs.getString("EndTime");
+                 int rows=rs.getInt("Rows");
+                 int columns=rs.getInt("Columns");
+                 int rowID=rs.getInt("RowID");
+                 int columnID=rs.getInt("ColumnID");
+                 double price=rs.getDouble("Price");
+                 int sellStatus=rs.getInt("SellStatus");
+                String userName = rs.getString("UserName");
+                 Ticket ticket = new Ticket(ticketID, listingID, filmID, filmName, hallID, date, startTime, endTime, rows, columns, rowID, columnID, price, sellStatus, userName);
+                 tickets.add(ticket);
+            }
+        } 
+        catch (SQLException e)
+        {
+            e.printStackTrace();   
+        }
+        finally
+        {
+            SqlClose.Close(ps,rs);
+        }
+        return tickets;
+    }
 
     @Override
     public void viewFilmList(String  userName)
@@ -149,10 +192,102 @@ public  class FilmDao implements FilmDaoInf
     public void viewFilmComment(String userName)
     {
         FilmControl filmControl = new FilmControl();
+
         filmControl.printFlimList("近期的电影列表如下:");
         int filmID = tools.getInt("输入FilmID进入对应影评区:");
+        //根据filmID获取filmName
+        List<Film> films = getAllFilms();
+        String filmName=null;
+        for (Film film:films)
+        {
+            if (film.getfilmID() == filmID)
+            {
+                filmName = film.getfilmName();
+            }
+        }
+        //打印该电影评论列表
+        System.out.println(filmName+"的评论如下：");
         filmControl.viewFilmComment(filmID);
+        PrintList printList = new PrintList();
         //做个评论区
+        List<Ticket> tickets = getAllTicket();
+        List<Ticket> userTickets = new ArrayList<>();
+
+        //获取评论时间
+        String timeNow = GetDate.getTime("yyyy-MM-dd HH:mm:ss");
+        //获取用户评论列表
+        List<FilmComment> filmComments = getAllFilmComment(filmID);
+        List<FilmComment> userFilmComments = new ArrayList<>();
+        String commentContent;
+        int commentLev;
+        int watchingCounts=0;
+        for (int i = 0; i <tickets.size() ; i++)
+        {
+            if ( tickets.get(i).getUserName() != null)
+            {
+
+
+                if (tickets.get(i).getFilmID() == filmID && tickets.get(i).getUserName().equals(userName))
+                {
+                    watchingCounts++;
+                    Ticket userTicket = tickets.get(i);
+                    userTickets.add(userTicket);
+                }
+            }
+        }
+        //判断用户是否有购票记录
+        if (watchingCounts > 0)
+        {
+            //如有购票记录，则打印用户购票记录
+            System.out.println("您的影票信息如下：");
+            printList.printTicket(userTickets);
+            //获取用户评论列表
+            for (int i = 0; i <filmComments.size() ; i++)
+            {
+                if (filmComments.get(i).getUserName().equals(userName))
+                {
+                    //展示用户评论
+                    FilmComment filmComment = filmComments.get(i);
+                    userFilmComments.add(filmComment);
+                }
+            }
+            //判断用户评论是否为空，不为空则打印评论，空的话要求输入评论
+            if (userFilmComments !=null)
+            {
+                System.out.println("您的评论信息如下:");
+                printList.printUserComment(userFilmComments);
+            }
+            else
+            {
+                System.out.println("请您对该电影进行评论:");
+                commentLev = tools.getInt("最高五星，请您选择本片星级:");
+                commentContent = tools.getString("请输入您的评论内容:");
+                String sqlstr = "insert into FilmComment (FilmID,FilmName,CommentTime,UserName,CommentLev,CommentContent) values ( '"
+                                +filmID+"',"+filmName+"',"+timeNow+"',"+userName+"',"+commentLev+"',"+commentContent+"')";
+                PreparedStatement preparedStatement = null;
+                ResultSet resultSet = null;
+                try
+                {
+                    preparedStatement = SqlConnect.Connect().prepareStatement(sqlstr);
+                    preparedStatement.executeUpdate();
+                }
+                catch (SQLException e)
+                {
+                     e.printStackTrace();
+                }
+                finally
+                {
+                    SqlClose.Close(preparedStatement,resultSet);
+                }
+                System.out.println("感谢您的评论");
+
+            }
+        }
+        else
+        {
+            System.out.println("您还未购买过影票哦！");
+        }
+        tools.returnMenu(userName);
     }
 
 }

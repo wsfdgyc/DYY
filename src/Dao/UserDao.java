@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Control.UserControl;
-import DaoInfo.UserDaoInf;
-import DaoInfo.UserDaoInf;
+import DaoInf.UserDaoInf;
 import Model.Bal;
 import Model.User;
 import Tools.tools;

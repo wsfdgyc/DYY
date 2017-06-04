@@ -12,8 +12,14 @@ public class GetDate
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.add(Calendar.DAY_OF_MONTH, dateCount);
-        SimpleDateFormat df=new SimpleDateFormat("yyyyMMdd");
-        String  dateNow = df.format(calendar.getTime());
-        return dateNow;
+        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyyMMdd");
+        String  date = dateFormat.format(calendar.getTime());
+        return date;
+    }
+    public static String getTime(String timeFormat)
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(timeFormat);
+        String nowTime = dateFormat.format(new Date());
+        return nowTime;
     }
 }

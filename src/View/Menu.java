@@ -35,7 +35,7 @@ public class Menu {
 				filmControl.buyFilmTicket(userName);
 				break;
 			case 5:
-
+				filmDao.viewFilmComment(userName);
 				break;
 			default:
 				break;
