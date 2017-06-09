@@ -17,8 +17,8 @@ public class SqlConnect {
 	          Class.forName(JDriver);
 	      }catch(ClassNotFoundException e)
 	      {
-	       //e.printStackTrace();
-	          System.out.println("加载数据库引擎失败");
+			  e.printStackTrace();
+	         // System.out.println("加载数据库引擎失败");
 	          System.exit(0);
 	      }     
 	   //   System.out.println("数据库驱动成功");
